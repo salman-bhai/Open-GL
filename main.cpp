@@ -1,16 +1,3 @@
-/*
- * GLUT Shapes Demo
- *
- * Written by Nigel Stewart November 2003
- *
- * This program is test harness for the sphere, cone
- * and torus shapes in GLUT.
- *
- * Spinning wireframe and smooth shaded shapes are
- * displayed until the ESC or q key is pressed.  The
- * number of geometry stacks and slices can be adjusted
- * using the + and - keys.
- */
 #include <Windows.h>
 #ifdef __APPLE__
 #include <GLUT/glut.h>
@@ -25,8 +12,7 @@ static int stacks = 16;
 
 /* GLUT callback Handlers */
 
-static void resize(int width, int height)
-{
+static void resize(int width, int height) {
     const float ar = (float) width / (float) height;
 
     glViewport(0, 0, width, height);
@@ -38,8 +24,7 @@ static void resize(int width, int height)
     glLoadIdentity() ;
 }
 
-static void display(void)
-{
+static void display(void) {
     const double t = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
     const double a = t*90.0;
 
@@ -47,79 +32,75 @@ static void display(void)
     glColor3d(1,0,0);
 
     glPushMatrix();
-        glTranslated(-2.4,1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutSolidSphere(1,slices,stacks);
+    glTranslated(-2.4,1.2,-6);
+    glRotated(60,1,0,0);
+    glRotated(a,0,0,1);
+    glutSolidSphere(1,slices,stacks);
     glPopMatrix();
 
     glPushMatrix();
-        glTranslated(0,1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutSolidCone(1,1,slices,stacks);
+    glTranslated(0,1.2,-6);
+    glRotated(60,1,0,0);
+    glRotated(a,0,0,1);
+    glutSolidCone(1,1,slices,stacks);
     glPopMatrix();
 
     glPushMatrix();
-        glTranslated(2.4,1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutSolidTorus(0.2,0.8,slices,stacks);
+    glTranslated(2.4,1.2,-6);
+    glRotated(60,1,0,0);
+    glRotated(a,0,0,1);
+    glutSolidTorus(0.2,0.8,slices,stacks);
     glPopMatrix();
 
     glPushMatrix();
-        glTranslated(-2.4,-1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutWireSphere(1,slices,stacks);
+    glTranslated(-2.4,-1.2,-6);
+    glRotated(60,1,0,0);
+    glRotated(a,0,0,1);
+    glutWireSphere(1,slices,stacks);
     glPopMatrix();
 
     glPushMatrix();
-        glTranslated(0,-1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutWireCone(1,1,slices,stacks);
+    glTranslated(0,-1.2,-6);
+    glRotated(60,1,0,0);
+    glRotated(a,0,0,1);
+    glutWireCone(1,1,slices,stacks);
     glPopMatrix();
 
     glPushMatrix();
-        glTranslated(2.4,-1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutWireTorus(0.2,0.8,slices,stacks);
+    glTranslated(2.4,-1.2,-6);
+    glRotated(60,1,0,0);
+    glRotated(a,0,0,1);
+    glutWireTorus(0.2,0.8,slices,stacks);
     glPopMatrix();
 
     glutSwapBuffers();
 }
 
 
-static void key(unsigned char key, int x, int y)
-{
-    switch (key)
-    {
+static void key(unsigned char key, int x, int y) {
+    switch (key) {
         case 27 :
         case 'q':
-            exit(0);
-            break;
+        exit(0);
+        break;
 
         case '+':
-            slices++;
-            stacks++;
-            break;
+        slices++;
+        stacks++;
+        break;
 
         case '-':
-            if (slices>3 && stacks>3)
-            {
-                slices--;
-                stacks--;
-            }
-            break;
+        if (slices>3 && stacks>3) {
+            slices--;
+            stacks--;
+        }
+        break;
     }
 
     glutPostRedisplay();
 }
 
-static void idle(void)
-{
+static void idle(void) {
     glutPostRedisplay();
 }
 
@@ -135,8 +116,7 @@ const GLfloat high_shininess[] = { 100.0f };
 
 /* Program entry point */
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     glutInit(&argc, argv);
     glutInitWindowSize(640,480);
     glutInitWindowPosition(10,10);

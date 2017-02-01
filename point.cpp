@@ -1,16 +1,14 @@
-#include<Windows.h>
+#include <Windows.h>
 #include <GL/glut.h>
 
 
-void init2D(float r, float g, float b)
-{
+void init2D(float r, float g, float b) {
 	glClearColor(1,1,1,0);
 	glMatrixMode (GL_PROJECTION);
 	gluOrtho2D (0.0, 200.0, 0.0, 150.0);
 }
 
-void display(void)
-{
+void display(void) {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);
 
@@ -31,8 +29,7 @@ void display(void)
 	glFlush();
 }
 
-/*int main(int argc,char *argv[])
-{
+int main(int argc,char *argv[]) {
 	glutInit(&argc,argv);
 	glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowSize (500, 500);
@@ -43,5 +40,3 @@ void display(void)
 	glutMainLoop();
 	return EXIT_SUCCESS;
 }
-
-*/
