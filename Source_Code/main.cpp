@@ -1,9 +1,5 @@
-#include <Windows.h>
-#ifdef __APPLE__
-#include <GLUT/glut.h>
-#else
-#include <GL/glut.h>
-#endif
+#include "GL/freeglut.h"
+#include "GL/gl.h"
 
 #include <stdlib.h>
 
