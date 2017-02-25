@@ -15,8 +15,8 @@ void DrawCube(void) {
     glClear(GL_COLOR_BUFFER_BIT);
     glLoadIdentity();
     glTranslatef(0.0,0.0,-10.5);
-    glRotatef(xRotated,1.0,0.0,0.0);
-    
+
+    glRotatef(xRotated,1.0,0.0,0.0);    
     // rotation about Y axis
     glRotatef(yRotated,0.0,1.0,0.0);
     // rotation about Z axis
@@ -96,7 +96,7 @@ int main(int argc, char** argv){
     //we initialilze the glut. functions
     glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
     glutInitWindowPosition(100, 100);
-    glutCreateWindow(argv[0]);
+    glutCreateWindow("Cube");
     
     init();
     
