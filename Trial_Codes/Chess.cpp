@@ -329,7 +329,7 @@ void ResetGame() {
     glClear(GL_COLOR_BUFFER_BIT);
     /* Reinitialize board members and X and Y coordinates for the pieces */
     InitializeBoardMatrix();
-    BoardPieces::BoardPieces();
+    BoardPieces();
     MyDisplay();
 }
 
@@ -861,7 +861,7 @@ int main(int argc, char** argv) {
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize(500,500);
     glutInitWindowPosition(0,0);
-    glutCreateWindow("Chess v2.1");
+    glutCreateWindow("Chess Life");
 
     /* Custom initializations */
     WindowInitializations();
