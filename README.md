@@ -16,6 +16,7 @@ g++ <filename>.c -lGL -lGLU -lglut -o <filename>
 - [x] Midpoint Line Drawing Algorithm
 - [x] Midpoint Circle Drawing Algorithm
 - [x] Midpoint Ellipse Drawing Algorithm
+- [ ] New ALgorithms of Design
 
 ## List of Programs
 - [x] Window drawing
