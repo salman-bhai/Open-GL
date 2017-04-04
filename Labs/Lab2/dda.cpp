@@ -7,6 +7,7 @@ double X1,Y1,X2,Y2;
 
 float round_value(float v) {
     return floor(v+0.5);
+    
 }
 
 void LineDDA(void) {
